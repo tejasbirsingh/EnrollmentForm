@@ -1,50 +1,53 @@
+// main function for extracting the data from form fields
 function enrollStudent() {
 
-    var pname = document.getElementById("pname").value;
-    var email = document.getElementById("email").value;
-    var site = document.getElementById("site").value;
-    var link = document.getElementById("link").value;
-    var gender = "";
+    var studentName = document.getElementById("pname").value;
+    var studentEmail = document.getElementById("email").value;
+    var websiteLink = document.getElementById("site").value;
+    var imageLink = document.getElementById("link").value;
+    var studentGender = "";
 
     // get the selected value for gender
     if (document.getElementById("r1").checked) {
-        gender = document.getElementById("r1").value;
+        studentGender = document.getElementById("r1").value;
     } else if (document.getElementById("r2").checked) {
-        gender = document.getElementById("r2").value;
+        studentGender = document.getElementById("r2").value;
     } else {
         alert("Please select your gender !");
         document.getElementById("r1").focus();
-        return false;
+        return false; // false is returned so submit fields are not reset
     }
 
-    var skills = [];
+    var studentSkills = [];
     // get the skills selected by the student
     var checkboxes = document.getElementsByName('skills');
     for (var checkbox of checkboxes) {
         if (checkbox.checked)
-            skills.push(checkbox.value);
+            studentSkills.push(checkbox.value);
     }
 
     // validation for the skills 
-    if (skills.length == 0) {
+    if (studentSkills.length == 0) { // if skills list is empty 
         alert("Please select atleast 1 skill !")
         document.getElementById('c1').focus();
-        return false;
+        return false; // false is returned so submit fields are not reset
     }
 
-    enterDataToTable(pname, email, site, link, gender, skills);
+    // this function call will add new data to the table
+    enterDataToTable(studentName, studentEmail, websiteLink, imageLink, studentGender, studentSkills);
 
 }
 
+// this function will add the extracted data to the table
 function enterDataToTable(pname, email, site, link, gender, skills) {
 
     var table = document.getElementById("enrolledTable");
     var rowCount = table.rows.length; // it will return the count of rows + 1 
     var row = table.insertRow(rowCount);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
+    var detailsCell = row.insertCell(0);
+    var profilePictureCell = row.insertCell(1);
     //  cell 1 is the column 1 which will show the details of the enrolled student
-    cell1.innerHTML =
+    detailsCell.innerHTML =
         "<strong>" +
         pname +
         "</strong><br>" +
@@ -58,11 +61,13 @@ function enterDataToTable(pname, email, site, link, gender, skills) {
         site +
         "</a><br>" +
         skills;
+
     // cell2 is column 2 which will show the profile photo of the student
-    cell2.innerHTML = "<img height='100' alt='Student Photo' src='" + link + "'>";
+    profilePictureCell.innerHTML = "<img height='100' alt='Student Photo' src='" + link + "'>";
     clearAllFields();
 }
 
+// this function will clear all the fields after form is submitted
 function clearAllFields() {
     document.getElementById("pname").value = "";
     document.getElementById("email").value = "";
