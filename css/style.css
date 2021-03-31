@@ -60,7 +60,11 @@ section.row {
 /* padding for the gender label */
 
 .gen {
-    padding-top: 20px;
+    padding-top: 10px;
+}
+
+.btn-danger {
+    margin-left: 20px;
 }
 
 
@@ -141,7 +145,7 @@ a {
 }
 
 
-/* property that will change to make fade animation */
+/* function named fade that will change the opacity over time*/
 
 @keyframes fade {
     0% {
@@ -179,7 +183,7 @@ footer span {
 }
 
 
-/*--responsive--*/
+/* responsive design properties for different screen sizes */
 
 @media (max-width: 1080px) {
     .col-md-6 {
