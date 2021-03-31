@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <header class="row ">
+            <div class="col-md-12">
+                <h1>Student Enrollment Form</h1>
+            </div>
+        </header>
+
+        <section class="row">
+
+            <form class="form" onsubmit="enrollStudent(); return false">
+                <div class="col-md-6 col-sm-12 left">
+
+
+                    <div class="form-group row">
+                        <label class="col-md-3 label-top-pad ">Name</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" name="pname" id="pname" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 label-top-pad ">Email</label>
+                        <div class="col-md-5">
+                            <input type="email" class="form-control" name="email" id="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 label-top-pad ">Website</label>
+                        <div class="col-md-5">
+                            <input type="url" class="form-control" name="site" id="site" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 label-top-pad ">Image Link</label>
+                        <div class="col-md-5">
+                            <input type="url" class="form-control" name="link" id="link" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 gen">Gender</label>
+                        <div class="col-md-5">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" id="r1" value="Male">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" id="r2" value="Female">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3">Skills</label>
+                        <div class="col-md-6">
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="skills" id="c1" value="Java"> Java
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="skills" id="c2" value="HTML"> HTML
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="skills" id="c3" value="CSS"> CSS
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row btns">
+                        <input type="submit" value="Enroll Student" class="btn btn-primary btn-lg" onclick="enroll()">
+                        <input type="reset" value="Clear" class="btn btn-danger btn-lg" style="margin-left:20px;">
+
+                    </div>
+
+                </div>
+            </form>
+
+
+            <div class="col-md-6 col-sm-12 right">
+                <h3>Enrolled Students</h3>
+                <table class="table table-bordered table-striped table-responsive table-hover" id="enrolledTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col">Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <strong>John Doe</strong><br> Male
+                                <br> johndoe@gmail.com
+                                <br>
+                                <a class="underlined" href="www.johndoe.com">www.johndoe.com</a><br> Java,HTML
+                            </td>
+                            <td><img height="100" alt="Student Photo" src="https://previews.123rf.com/images/anatolir/anatolir1712/anatolir171201477/
+                                    91833942-man-avatar-icon-flat-illustration-of-man-avatar-vector-icon-isolated-on-white-background.jpg">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="row">
+            <div class="col-md-12"><span>Copyright 2020-2021 by Fresher Training</span></div>
+        </footer>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

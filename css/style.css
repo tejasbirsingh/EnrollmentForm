@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    width: 100%;
+    height: 645px;
+    padding: 0;
+}
+
+
+/* properties for the header */
+
+header.row {
+    width: 100%;
+    background-color: #46d7ac;
+    height: 80px;
+    text-align: center;
+    margin-left: 0;
+    display: grid;
+    border-width: 1px;
+    border-style: solid;
+}
+
+header h1 {
+    color: white;
+    font-size: 30px;
+    font-family: "Arial";
+    font-weight: 600;
+    animation: fade 1s 1 linear;
+    -webkit-animation: fade 1s 1 linear;
+    -moz-animation: fade;
+}
+
+section.row {
+    height: 400px;
+    width: 100%;
+    margin-left: 0;
+}
+
+.btns {
+    margin-left: 1px;
+}
+
+.left {
+    padding-left: 80px;
+    margin-top: 50px;
+}
+
+
+/* top padding for labels */
+
+.label-top-pad {
+    padding-top: 10px;
+}
+
+
+/* padding for the gender label */
+
+.gen {
+    padding-top: 20px;
+}
+
+
+/* properties for the right section of the page */
+
+.right {
+    border-left: 4px solid #46d7ac;
+    margin-top: 20px;
+    height: auto;
+    padding-bottom: 80px;
+    padding-left: 80px;
+    padding-right: 60px;
+}
+
+.right h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* table properties */
+
+table {
+    margin-top: 40px;
+}
+
+table.table-bordered {
+    border: 2px solid #89a82d;
+    margin-top: 20px;
+}
+
+table.table-bordered>thead>tr>th {
+    border: 2px solid#89a82d;
+}
+
+table.table-bordered>tbody>tr>td {
+    border: 2px solid#89a82d;
+}
+
+table th {
+    background-color: #a7c93f;
+    color: white;
+}
+
+.table-striped {
+    background-color: #faffe8
+}
+
+
+/* Width for the profile picture column of the student data */
+
+th:nth-child(2) {
+    width: 100px;
+}
+
+td img {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: auto auto auto auto;
+}
+
+
+/* animation for the addition of new row */
+
+tr {
+    animation: fade 1s 1 linear;
+    -webkit-animation: fade 1s 1 linear;
+    -moz-animation: fade;
+}
+
+
+/* links styling */
+
+a {
+    text-decoration: underline;
+    color: #1e2cf3
+}
+
+
+/* property that will change to make fade animation */
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* properties of the footer */
+
+footer.row {
+    background-color: #46d7ac;
+    text-align: center;
+    width: 100%;
+    height: 6%;
+    margin-left: 0;
+    position: fixed;
+    bottom: 0;
+    padding: 1em 0;
+    font-weight: 600;
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer span {
+    font-size: 18px;
+    vertical-align: center;
+    color: white;
+}
+
+
+/*--responsive--*/
+
+@media (max-width: 1080px) {
+    .col-md-6 {
+        width: 100%;
+    }
+    .left {
+        padding-left: 35%;
+        padding-bottom: 80px;
+        margin-top: 70px;
+        border-bottom: 4px solid #46d7ac;
+    }
+    .right {
+        padding-left: 10px;
+        margin-top: 50px;
+        padding-bottom: 80px;
+        border-left: none;
+    }
+    table {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 991px) {
+    .left {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        margin-top: 10px;
+        border-bottom: 4px solid #46d7ac;
+    }
+    .right {
+        padding-left: 20px;
+        margin-top: 10px;
+        padding-bottom: 80px;
+        border-left: none;
+    }
+    table {
+        margin-top: 10px;
+    }
+    .btns {
+        padding-left: 15px;
+    }
+    .gen {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .left {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        margin-top: 10px;
+        border-bottom: 4px solid #46d7ac;
+    }
+    .right {
+        padding-left: 20px;
+        margin-top: 10px;
+        padding-bottom: 80px;
+        border-left: none;
+    }
+    table {
+        margin-top: 10px;
+    }
+    .btns {
+        padding-left: 15px;
+    }
+    .gen {
+        padding-top: 0;
+    }
+}
