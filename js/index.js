@@ -1,10 +1,27 @@
 // main function for extracting the data from form fields
+
+function validateEmail(mail) {
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+        return (true)
+    }
+
+    return (false)
+}
+
 function enrollStudent() {
 
-    var studentName = document.getElementById("pname").value;
-    var studentEmail = document.getElementById("email").value;
-    var websiteLink = document.getElementById("site").value;
-    var imageLink = document.getElementById("link").value;
+    var formData = new FormData(studentForm);
+    var studentName = formData.get("pname");
+    var studentEmail = formData.get("email");
+    if (validateEmail(studentEmail) == false) {
+        alert("Please enter correct email!");
+        document.getElementById("email").focus();
+        return false;
+    }
+    var websiteLink = formData.get("site");
+    var imageLink = formData.get("link");
+
+
     var studentGender = "";
 
     // get the selected value for gender
@@ -69,10 +86,13 @@ function enterDataToTable(pname, email, site, link, gender, skills) {
 
 // this function will clear all the fields after form is submitted
 function clearAllFields() {
+    // var formData = new FormData(studentForm);
+    // formData.clearAllFields();
     document.getElementById("pname").value = "";
     document.getElementById("email").value = "";
     document.getElementById("site").value = "";
     document.getElementById("link").value = "";
+
     document.getElementById("r1").checked = false;
     document.getElementById("r2").checked = false;
     document.getElementById("c1").checked = false;
